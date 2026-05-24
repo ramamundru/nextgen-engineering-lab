@@ -4,59 +4,137 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="AI Research">
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>AI Research & Next-Gen Systems</h1>
+  <!-- FILTER BAR -->
+  <section class="filters-wrapper">
 
-    <p>
-      This section focuses on Artificial Intelligence research including Machine Learning,
-      Deep Learning, Generative AI, Large Language Models (LLMs), and AI Agents.
-    </p>
+    <div class="filters">
+
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Machine Learning</button>
+      <button class="filter-btn">Deep Learning</button>
+      <button class="filter-btn">Generative AI</button>
+      <button class="filter-btn">LLMs</button>
+      <button class="filter-btn">AI Agents</button>
+      <button class="filter-btn">Autonomous Systems</button>
+      <button class="filter-btn">RAG Systems</button>
+      <button class="filter-btn">Fine-Tuning</button>
+      <button class="filter-btn">AI Infrastructure</button>
+      <button class="filter-btn">Vector Databases</button>
+
+    </div>
+
   </section>
 
-  <!-- COMING SOON BOX -->
-  <section class="grid">
+  <!-- EMPTY STATE -->
+  <section class="empty-section">
 
-    <div class="card">
-      <img
-        src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
-        alt="AI Research"
-      />
+    <div class="empty-card">
 
-      <div class="meta">AI RESEARCH</div>
-      <h3>Content Coming Soon</h3>
+      <h1>Research Content Coming Soon</h1>
+
       <p>
-        I am currently working on publishing real-world AI research,
-        experiments with LLMs, AI Agents, and production-ready AI systems.
+        This section will feature structured research on Machine Learning, Deep Learning,
+        Generative AI, Large Language Models (LLMs), AI Agents, autonomous systems,
+        retrieval-augmented generation (RAG), model fine-tuning, and scalable AI infrastructure.
+        Content is currently under preparation and will be published soon with real-world engineering insights.
       </p>
-    </div>
 
-    <div class="card">
-      <img
-        src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80"
-        alt="AI Agents"
-      />
-
-      <div class="meta">AI AGENTS</div>
-      <h3>Autonomous Systems</h3>
-      <p>
-        Research on autonomous AI agents, reasoning systems, and workflow automation will be added soon.
-      </p>
-    </div>
-
-    <div class="card">
-      <img
-        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
-        alt="Deep Learning"
-      />
-
-      <div class="meta">DEEP LEARNING</div>
-      <h3>Neural Networks</h3>
-      <p>
-        Deep learning architectures, training methods, and real-world model deployment insights coming soon.
-      </p>
     </div>
 
   </section>
 
 </MainLayout>
+
+<style>
+
+  /* ONLY PAGE SCOPED STYLES (SAFE) */
+
+  .filters-wrapper {
+    padding: 40px 16px 20px;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .filter-btn {
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #334155;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover {
+    transform: translateY(-2px);
+    border-color: #4f46e5;
+    color: #4f46e5;
+  }
+
+  .filter-btn.active {
+    background: #4f46e5;
+    color: white;
+    border-color: #4f46e5;
+  }
+
+  /* EMPTY STATE */
+  .empty-section {
+    padding: 40px 16px 80px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .empty-card {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    border: 1px solid #eef2f7;
+  }
+
+  .empty-card h1 {
+    font-size: clamp(24px, 3vw, 38px);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+
+  .empty-card p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+
+    .filter-btn {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+
+    .empty-card {
+      padding: 32px 20px;
+    }
+
+    .empty-card p {
+      font-size: 14px;
+    }
+  }
+
+</style>

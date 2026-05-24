@@ -4,58 +4,170 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="Blog">
 
-  <section class="hero">
-    <h1>Engineering Blog</h1>
-    <p>
-      I will be sharing articles soon on backend systems, frontend engineering,
-      system design, DevOps, cloud infrastructure, and AI systems.
-    </p>
+  <!-- FILTER BUTTONS -->
+  <section class="blog-filters">
+
+    <button class="filter-btn active">
+      All
+    </button>
+
+    <button class="filter-btn">
+      Backend
+    </button>
+
+    <button class="filter-btn">
+      Frontend
+    </button>
+
+    <button class="filter-btn">
+      System Design
+    </button>
+
+    <button class="filter-btn">
+      DevOps
+    </button>
+
+    <button class="filter-btn">
+      Cloud
+    </button>
+
+    <button class="filter-btn">
+      AI
+    </button>
+
+    <button class="filter-btn">
+      Machine Learning
+    </button>
+
+    <button class="filter-btn">
+      Deep Learning
+    </button>
+
+    <button class="filter-btn">
+      LLMs
+    </button>
+
+    <button class="filter-btn">
+      AI Agents
+    </button>
+
+    <button class="filter-btn">
+      Architecture
+    </button>
+
   </section>
 
-  <section class="grid">
+  <!-- EMPTY STATE -->
+  <section class="empty-state">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" />
-      <div class="meta">Backend</div>
-      <h3>Coming Soon</h3>
-      <p>High-quality engineering articles will be published soon.</p>
-    </div>
+    <div class="empty-card">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" />
-      <div class="meta">Frontend</div>
-      <h3>Coming Soon</h3>
-      <p>Frontend engineering insights will be added soon.</p>
-    </div>
+      <h2>
+        Articles Coming Soon
+      </h2>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31" />
-      <div class="meta">DevOps</div>
-      <h3>Coming Soon</h3>
-      <p>CI/CD and deployment systems content coming soon.</p>
-    </div>
+      <p>
+        High-quality technical articles and real-world engineering content
+        will be published soon across software engineering, cloud systems,
+        DevOps, Artificial Intelligence, Large Language Models (LLMs),
+        AI Agents, and scalable production architectures.
+      </p>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" />
-      <div class="meta">System Design</div>
-      <h3>Coming Soon</h3>
-      <p>Scalable system design content will be published.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" />
-      <div class="meta">AI</div>
-      <h3>Coming Soon</h3>
-      <p>AI & ML content is under preparation.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba" />
-      <div class="meta">AI Agents</div>
-      <h3>Coming Soon</h3>
-      <p>AI Agents and LLM systems will be covered soon.</p>
     </div>
 
   </section>
 
 </MainLayout>
+
+<style>
+
+  .blog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 60px 20px 50px;
+  }
+
+  .filter-btn {
+    border: none;
+    outline: none;
+    background: white;
+    color: #334155;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+
+  .filter-btn:hover {
+    transform: translateY(-2px);
+    background: #4f46e5;
+    color: white;
+  }
+
+  .filter-btn.active {
+    background: #4f46e5;
+    color: white;
+  }
+
+  .empty-state {
+    width: 100%;
+    padding: 0 20px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .empty-card {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .empty-card h2 {
+    margin: 0 0 20px;
+    font-size: clamp(28px, 4vw, 40px);
+    color: #0f172a;
+    line-height: 1.2;
+  }
+
+  .empty-card p {
+    margin: 0 auto;
+    max-width: 760px;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  @media (max-width: 768px) {
+
+    .blog-filters {
+      gap: 10px;
+      padding: 40px 16px 40px;
+    }
+
+    .filter-btn {
+      font-size: 13px;
+      padding: 10px 16px;
+    }
+
+    .empty-card {
+      padding: 40px 24px;
+    }
+
+    .empty-card p {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+  }
+
+</style>
