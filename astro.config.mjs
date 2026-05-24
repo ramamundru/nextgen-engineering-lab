@@ -14,6 +14,9 @@ export default defineConfig({
   image: {
     remotePatterns: [{ protocol: 'https' }],
   },
+  devToolbar: {
+  enabled: false
+  },
   markdown: {
     drafts: true,
     shikiConfig: {

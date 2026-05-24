@@ -1,0 +1,42 @@
+---
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | NextGen Engineering Lab</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER (ALWAYS SAME) -->
+    <header class="header">
+      <div class="container header-inner">
+        <div class="logo">NextGen Engineering Lab</div>
+
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/ai-research">Research</a>
+          <a href="/about">About Me</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- FOOTER (ALWAYS SAME) -->
+    <footer class="footer">
+      © 2026 NextGen Engineering Lab — Built for Modern Software & AI Systems
+    </footer>
+
+  </body>
+</html>
